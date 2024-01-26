@@ -1,0 +1,67 @@
+//Variaveis
+const heroi = "Dante" 
+let tipo = "Mago"
+let xpTotal = 3800
+let ranking = "Diamante"
+
+console.log (heroi +" Atacou usando qual arma?")
+//Definindo tipo de ataque
+switch (tipo)
+{case "Ninja":
+        console.log (heroi + " Atacou com shuriken")
+        break;
+case "Guerreiro":
+        console.log (heroi +" Atacou usando espada")
+        break;
+ case "Mago":
+        console.log (heroi +" Atacou usando magia")
+        break;
+default :
+        console.log(heroi + " Estava desarmado e acabou morrendo")
+}
+console.log(heroi +" é de quaol ranking?")
+
+//Definindo ranking
+if (xpTotal <= 1000)
+   { console.log ("O ranking de "+ heroi + " é Bronze")
+}
+else if (xpTotal<= 2000)
+    {console.log("O ranking de "+ heroi + " é Prata")
+}
+else if (xpTotal <= 3000){
+    console.log ("O ranking de "+ heroi + " é Ouro")
+}
+else if (xpTotal <=4000){
+    console.log ("O ranking de "+ heroi + " é Diamante")
+}
+else {
+    console.log ("O ranking de "+ heroi + " é Imortal")
+}
+
+
+//JSON
+//Perfil do Jogo
+
+let perfil ={
+ name: "Dante",
+ age:154,
+ ataque:{
+    0:["Magia", "2000"],
+    1:["Espada","1500"],
+    2:["Shuriken","200"]}
+}
+perfildoJogo(perfil)
+ function perfildoJogo(perfil){
+    console.log (`O nome do heroi é ${perfil.name}`)
+    console.log (`"A idade de ${perfil.name} é de ${perfil.age}`)
+    console.log ("-------------------")
+
+    for (let index in perfil.ataque)
+       { let [tipoArma, danoAtaque] = perfil.ataque[index]
+            console.log (`Quando a arma utilizada for ${tipoArma}  o dano total é de ${danoAtaque}`)
+
+        }
+ }
+ //Saída
+
+ console.log ("O ranking de " + heroi + " é " +ranking +", e ele atacou usando Magia")
